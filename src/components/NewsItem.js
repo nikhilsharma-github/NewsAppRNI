@@ -1,19 +1,61 @@
 import React, { Component } from "react";
 
 export default class NewsItem extends Component {
-    
   render() {
+    let {
+      title,
+      description,
+      imageUrl,
+      newsUrl,
+      author,
+      publishedAt,
+      sourceName,
+      // categoryName,
+    } = this.props;
 
-    let { title, description, imageUrl ,newsUrl} = this.props;
 
     return (
       <div className="my-3">
-        <div className="card" >
-          <img src={imageUrl} className="card-img-top cardImageStyle" alt=".../" />
+        <div className="card">
+          <div>
+
+          <span
+            className={` badge rounded-pill bg-danger `}
+            style={ { 
+              display:'flex',
+              justifyContent:'flex-right',
+              position:'absolute',
+              right:0
+            }}
+            
+            >
+            {sourceName.name}
+            <span className="visually-hidden">unread messages</span>
+          </span>
+            </div>
+
+
+          <img
+            src={imageUrl}
+            className="card-img-top cardImageStyle"
+            alt=".../"
+          />
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>
-            <a href={newsUrl} target="_blank"  rel="noreferrer" className="btn btn-sm btn-success">
+            <p className="card-text">
+              <i class="text-primary">
+                By {author ? author : "Unknown"} on{" "}
+                {new Date(publishedAt).toGMTString()}
+              </i>{" "}
+            </p>
+
+            <a
+              href={newsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-sm btn-success"
+            >
               Read More
             </a>
           </div>
