@@ -9,14 +9,14 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg fixed-top ">
         <div className="container-fluid ">
           <Link className="navbar-brand " to="/General">
            <span className="navLogo" >Republic News India</span> 
           </Link>
           {/* <img src={imageUrlSample} className="navLogo" alt="" /> */}
           <button
-            className="navbar-toggler"
+            className="navbar-toggler navToggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -24,7 +24,8 @@ const NavBar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon nti">RNI</span>
+            
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">

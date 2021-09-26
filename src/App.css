@@ -1,166 +1,183 @@
-body{
-  background-color: rgb(7, 8, 34);
+body {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 7, 52, 1) 0%,
+    rgba(89, 6, 6, 1) 55%,
+    rgba(0, 16, 169, 1) 100%
+  );
 }
 
-.cardImageStyle{
-  /* width:17.9rem; */
-  height:12rem;
-  /* border: 1px solid green; */
+.cardImageStyle {
+  height: 12rem;
 }
 
-.headingStyle{
+.card {
+  background-color: #ffffff;
+  box-shadow: rgb(78, 46, 46) 10px 10px 6px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.card-title {
+  font-size: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(0, 30, 128);
+  text-shadow: rgb(78, 46, 46) 2px 2px 6px;
+}
+
+.card-date {
+  font-size: bolder;
+  font-size: 0.8rem;
+  margin: 0.5rem 0rem;
+  font-weight: bolder;
+  color: rgb(126, 1, 1);
+  border-radius: 2rem;
+}
+.headingStyle {
   text-align: center;
-  margin:2rem auto;
+  margin: 2rem auto;
+  padding: 1rem;
+  padding-top: 2rem;
+  width: 85%;
+  color: white;
+  font-size: 3rem;
+  font-family: "Gemunu Libre", sans-serif;
+  text-shadow: rgb(211, 42, 42) 3px 3px 2px;
+  border-bottom: 2px solid red;
 }
 
-.spinnerStyling{
-  width:22rem;
-  height:10rem;
-  margin:0 auto;
-
-  
+.spinnerStyling {
+  width: 22rem;
+  height: 10rem;
+  margin: 0 auto;
 }
 
-nav{
-  
-  font-family: 'Gemunu Libre', sans-serif;
+nav {
+  font-family: "Gemunu Libre", sans-serif;
   font-size: 1.5rem;
-  background-color: rgb(48, 1, 1);
-  
+  background-color: rgb(2, 17, 39);
+  color: black;
 }
 
-.navLogo{
+.navLogo {
   color: rgb(223, 0, 0);
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Abril Fatface", cursive;
   text-shadow: rgb(0, 0, 0) 2px 2px 2px;
-  /* background-color: rgb(22, 5, 5); */
   font-size: 2rem;
-  margin:0 1rem;
-  padding:0 0.5rem;
+  margin: 0 1rem;
+  padding: 0 0.5rem;
   border-radius: 1rem;
 }
 
-.homePageHeadingM{
-  font-family: 'Abril Fatface', cursive;
+.homePageHeadingM {
+  font-family: "Abril Fatface", cursive;
   font-size: 4rem;
   font-weight: bolder;
-  color:rgb(248, 21, 21);
-  
-  text-shadow: rgb(0, 0, 0) 4px 4px 4px;
+  color: rgb(248, 21, 21);
 
+  text-shadow: rgb(0, 0, 0) 4px 4px 4px;
 }
-.homePageHeadingS{
-  font-family: 'Gemunu Libre', sans-serif;
+.homePageHeadingS {
+  font-family: "Gemunu Libre", sans-serif;
   font-size: 1.8rem;
   color: red;
 }
-.homePageHeadingSS{
-  padding:1rem 1rem;
-  margin:1rem auto;
+.homePageHeadingSS {
+  padding: 1rem 1rem;
+  margin: 1rem auto;
   text-align: center;
-  font-family: 'Gemunu Libre', sans-serif;
+  font-family: "Gemunu Libre", sans-serif;
   font-size: 4rem;
   color: aliceblue;
   text-shadow: rgb(92, 92, 92) 4px 4px 4px;
 }
 
-.homePageImage{
-  /* border: 2px solid red; */
-   
-  
+.homePageImage {
   border-radius: 2rem;
-  /* width:60rem; */
-  /* margin:2rem 20%; */
-  /* margin:0 auto;
-  padding: 0 auto; */
-  text-align:center;
-width:80%;
-display:block;
-margin:auto;
-  
-  border:2px solid #fff;
-  /* background: url(img/tiger.png) no-repeat; */
+  text-align: center;
+  width: 80%;
+  display: block;
+  margin: auto;
+
+  border: 2px solid #fff;
   box-shadow: 20px 20px 10px rgb(238, 46, 46);
   -moz-box-shadow: 10px 10px 5px rgb(250, 70, 70);
   -webkit-box-shadow: 20px 20px 10px rgb(230, 70, 70);
   -khtml-box-shadow: 10px 10px 5px #ccc;
 }
 
-
-.imageContainer{
-  /* border: 4px solid green; */
-  max-width:70%;
-  margin:4rem auto;
-  
+.imageContainer {
+  max-width: 70%;
+  margin: 4rem auto;
 }
 
-.section2{
-  /* background-color: rgb(224, 150, 147); */
-  background: -webkit-linear-gradient(45deg, hsla(0, 100%, 30%, 1) 0%, hsla(11, 85%, 59%, 1) 65%);
+.section2 {
+  background: -webkit-linear-gradient(
+    45deg,
+    hsla(0, 100%, 30%, 1) 0%,
+    hsla(11, 85%, 59%, 1) 65%
+  );
   padding-bottom: 1rem;
 }
 
-.newsChannelLogo{
-  width:10rem;
-  height:5rem;
-  /* border:2px solid black; */
+.newsChannelLogo {
+  width: 10rem;
+  height: 5rem;
   border-radius: 1rem;
-  margin:0 0.5rem;
+  margin: 0 0.5rem;
 }
 
-.newsChannelLogoDiv{
-  /* padding:1rem 1rem; */
-  margin:1rem 2rem;
+.newsChannelLogoDiv {
+  margin: 1rem 2rem;
   text-align: center;
-  width:100%;
-  
-  
+  width: 100%;
 }
 
-footer{
-  /* width:4rem; */
-  
-  font-family: 'Gemunu Libre', sans-serif;
+footer {
+  font-family: "Gemunu Libre", sans-serif;
   color: white;
   text-align: center;
   background-color: black;
-  padding-bottom: 1rem;
-  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
-.iconImages{
-  /* margin:rem 1rem; */
-  padding:0rem 3rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* border: 2px solid blue; */
-  /* height:2rem;
-  width:2rem; */
+.iconImages {
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem 4rem;
 }
 
+/* .custom-toggler.navbar-toggler {
+  border-color: lightgreen;
+} */
 
+
+.navToggler{
+  /* background-color: green; */
+  border: 2px solid red;
+}
+
+.nti{
+  color: rgb(255, 0, 0);
+  /* background-color: white; */
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+}
 @media only screen and (max-width: 600px) {
-  
-  .newsChannelLogo{
-    width:10rem;
-    height:4rem;
-    /* border:2px solid black; */
+  .newsChannelLogo {
+    width: 10rem;
+    height: 4rem;
     border-radius: 1rem;
-    margin:0 0.5rem;
+    margin: 0 0.5rem;
   }
-  .iconImages{
-    /* margin:rem 1rem; */
-    
+  .iconImages {
     justify-content: space-evenly;
-    
   }
-  .homePageHeadingSS{
-    padding:1rem 1rem;
-    margin:1rem auto;
+  .homePageHeadingSS {
+    padding: 1rem 1rem;
+    margin: 1rem auto;
     text-align: center;
-    font-family: 'Gemunu Libre', sans-serif;
+    font-family: "Gemunu Libre", sans-serif;
     font-size: 2rem;
     color: aliceblue;
     text-shadow: rgb(92, 92, 92) 4px 4px 4px;

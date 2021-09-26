@@ -44,17 +44,24 @@ const NewsItem=(props)=>{
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>
             <p className="card-text">
-              <i class="text-primary">
-                By {author ? author : "Unknown"} on{" "}
-                {new Date(publishedAt).toGMTString()}
-              </i>{" "}
+              <i >
+                 <p class="card-date">
+                    By {author ? author : "Unknown"} 
+                {" "}
+                </p>
+                <p class="card-date">
+
+                Dated 
+                 {new Date(publishedAt).toGMTString()}
+               </p>
+               </i>{" "}
             </p>
 
             <a
               href={newsUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn btn-sm btn-success"
+              className="btn btn-sm btn-primary"
             >
               Read More
             </a>
