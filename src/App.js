@@ -1,6 +1,6 @@
 import "./App.css";
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 import HomePage from "./components/HomePage"
@@ -14,7 +14,22 @@ const App=(props)=> {
   const pageSize=9;
   // apiKeyVal="5fe7972e1c3e4e1c8813a81c8684a888";
   const apiKeyVal=process.env.REACT_APP_NEWS_API
+
+  // const [longitude, setlongitude] = useState(77.182732);
+  // const [latitude, setlatitude] = useState(28.694566);
+   
+  
+  //   useEffect(() => {
     
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       console.log("Latitude is :", position.coords.latitude);
+  //       console.log("Longitude is :", position.coords.longitude);
+
+  //       setlongitude(position.coords.latitude);
+  //       setlatitude(position.coords.longitude);
+  //     });
+    
+  // }, [])
         
    const [progress, setProgress] = useState(0);
 
@@ -29,7 +44,7 @@ const App=(props)=> {
         shadow={true}
         progress={progress}
         
-      />
+          />
           
           <Switch>
             <Route exact path="/">
