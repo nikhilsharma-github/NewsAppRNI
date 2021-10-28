@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage"
 import LoadingBar from 'react-top-loading-bar'
 // import NewsItem from './components/NewsItem';
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {BrowserRouter as  Router, Switch, Route } from "react-router-dom";
 
 // export default class App extends Component {
 const App=(props)=> {
@@ -36,7 +36,7 @@ const App=(props)=> {
   
     return (
       <>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router >
           <Navbar></Navbar>
           <LoadingBar
         color='#f11946'
