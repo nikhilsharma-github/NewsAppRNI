@@ -88,7 +88,7 @@ const HomePage = () => {
                 alt=""
               />
             </div>
-            <div className="col  newsChannelLogoDiv">
+            <div className="col  newsChannelLogoDiv" cursor="pointer">
               <img
                 className="newsChannelLogo"
                 src={`${process.env.PUBLIC_URL}/assets/NBT.png`}

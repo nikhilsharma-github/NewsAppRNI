@@ -36,7 +36,7 @@ const App=(props)=> {
   
     return (
       <>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Navbar></Navbar>
           <LoadingBar
         color='#f11946'

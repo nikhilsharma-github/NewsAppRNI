@@ -13,9 +13,9 @@ console.log(dataVal.articles);
 
 const News=(props)=> {
   
-    //Currently Using SampleData
-    // const [articles, setArticles] = useState([])
-    const [articles, setArticles] = useState(dataVal.articles);
+    //SWITCH BETWEEN API DATA VS JSON DATA
+    const [articles, setArticles] = useState([])
+    // const [articles, setArticles] = useState(dataVal.articles);
     
     
     const [loading, setLoading] = useState(true)
@@ -38,9 +38,9 @@ const News=(props)=> {
       props.setProgress(30);
 
 
-      //Currently Using SampleData
-      let parseData= dataVal;
-      // let parseData = await data.json();
+      //SWITCH BETWEEN API DATA VS JSON DATA
+      // let parseData= dataVal;
+      let parseData = await data.json();
       
       props.setProgress(70);
       
@@ -64,12 +64,12 @@ const News=(props)=> {
           const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page+1}&pageSize=${props.pageSize}`;
           
           
-          //Currently Using SampleData
+          //SWITCH BETWEEN API DATA VS JSON DATA
           let data = await fetch(url);
-          // let parseData = await data.json();
+          let parseData = await data.json();
           
           
-          let parseData=dataVal;
+          // let parseData=dataVal;
           setArticles(articles.concat(parseData.articles));
           setTotalResults(parseData.totalResults);
         };
