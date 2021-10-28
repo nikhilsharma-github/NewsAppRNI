@@ -13,7 +13,8 @@ import {BrowserRouter as  Router, Switch, Route } from "react-router-dom";
 const App=(props)=> {
   const pageSize=9;
   // apiKeyVal="5fe7972e1c3e4e1c8813a81c8684a888";
-  const apiKeyVal=process.env.REACT_APP_NEWS_API
+  // const apiKeyVal=process.env.REACT_APP_NEWS_API
+  const apiKeyVal="5fe7972e1c3e4e1c8813a81c8684a888";
 
   // const [longitude, setlongitude] = useState(77.182732);
   // const [latitude, setlatitude] = useState(28.694566);
