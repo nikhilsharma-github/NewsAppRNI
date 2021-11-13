@@ -30,9 +30,7 @@ const News=(props)=> {
   
   //SWITCH BETWEEN API DATA VS JSON DATA
   // const [articles, setArticles] = useState([])
-  setTimeout(function(){
-    window.location.reload();
-  });
+  
   {
     if(props.category==="business"){
       sampleDataVal=dataValBus;
