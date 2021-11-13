@@ -4,18 +4,58 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import imageUrlSample from './RNIlogo.jpg';
-import sampleData from '../sampleOutput.json';
+import sampleData from '../sampledata/sampleData.json';
+import sampleDataTechnology from '../sampledata/sampleDataTechnology.json';
+import sampleDataEntertainment from '../sampledata/sampleDataEntertainment.json';
+import sampleDataBusiness from '../sampledata/sampleDataBusiness.json';
+import sampleDataHealth from '../sampledata/sampleDataHealth.json';
+import sampleDataSports from '../sampledata/sampleDataSports.json';
+import sampleDataScience from '../sampledata/sampleDataScience.json';
 
 
- 
+  // SAMPLE DATA COLLECTION IN THIS FILE 
 const dataVal=  sampleData;
-console.log(dataVal.articles);
+const dataValTech=  sampleDataTechnology;
+const dataValEnt=  sampleDataEntertainment;
+const dataValSci=  sampleDataScience;
+const dataValSpo=  sampleDataSports;
+const dataValHel=  sampleDataHealth;
+const dataValBus=  sampleDataBusiness;
+
+
+let sampleDataVal;
+
 
 const News=(props)=> {
   
-    //SWITCH BETWEEN API DATA VS JSON DATA
-    const [articles, setArticles] = useState([])
-    // const [articles, setArticles] = useState(dataVal.articles);
+  //SWITCH BETWEEN API DATA VS JSON DATA
+  // const [articles, setArticles] = useState([])
+  {
+    if(props.category==="business"){
+      sampleDataVal=dataValBus;
+    }
+    
+    else if(props.category==="entertainment"){
+      sampleDataVal=dataValEnt;
+    }
+    else if(props.category==="health"){
+      sampleDataVal=dataValHel;
+    }
+    else if(props.category==="science"){
+      sampleDataVal=dataValSci;
+    }
+    else if(props.category==="sports"){
+      sampleDataVal=dataValSpo;
+    }
+    else if(props.category==="technology"){
+      sampleDataVal=dataValTech;
+    }
+    else if(props.category==="general"){
+      sampleDataVal=dataVal;
+  
+    }
+  }
+  const [articles, setArticles] = useState(sampleDataVal.articles);
     
     
     const [loading, setLoading] = useState(true)
@@ -30,17 +70,42 @@ const News=(props)=> {
 
     const updateNews=async()=>{
       props.setProgress(10);
-      const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page}&pageSize=${props.pageSize}`;
-      
+      // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page}&pageSize=${props.pageSize}`;
+      let parseData;
       
       setLoading(true);
-      let data = await fetch(url);
+      {
+        if(props.category==="business"){
+          parseData=dataValBus;
+        }
+        
+        else if(props.category==="entertainment"){
+          parseData=dataValEnt;
+        }
+        else if(props.category==="health"){
+          parseData=dataValHel;
+        }
+        else if(props.category==="science"){
+          parseData=dataValSci;
+        }
+        else if(props.category==="sports"){
+          parseData=dataValSpo;
+        }
+        else if(props.category==="technology"){
+          parseData=dataValTech;
+        }
+        else if(props.category==="general"){
+          parseData=dataVal;
+
+        }
+      }
+      // let data = await fetch(url);
       props.setProgress(30);
-
-
+      
+      
       //SWITCH BETWEEN API DATA VS JSON DATA
       // let parseData= dataVal;
-      let parseData = await data.json();
+      // let parseData = await data.json();
       
       props.setProgress(70);
       
@@ -57,23 +122,48 @@ const News=(props)=> {
       // eslint-disable-next-line 
     },[])
     
-        const  fetchMoreData = async () => {
-          
-          
-          setPage(page+1);
-          const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page+1}&pageSize=${props.pageSize}`;
-          
-          
-          //SWITCH BETWEEN API DATA VS JSON DATA
-          let data = await fetch(url);
-          let parseData = await data.json();
-          
-          
-          // let parseData=dataVal;
-          setArticles(articles.concat(parseData.articles));
-          setTotalResults(parseData.totalResults);
-        };
+    const  fetchMoreData = async () => {
+      
+      
+      setPage(page+1);
+      // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page+1}&pageSize=${props.pageSize}`;
+      let parseData;
+      {
+        if(props.category==="business"){
+          parseData=dataValBus;
+        }
         
+        else if(props.category==="entertainment"){
+          parseData=dataValEnt;
+        }
+        else if(props.category==="health"){
+          parseData=dataValHel;
+        }
+        else if(props.category==="science"){
+          parseData=dataValSci;
+        }
+        else if(props.category==="sports"){
+          parseData=dataValSpo;
+        }
+        else if(props.category==="technology"){
+          parseData=dataValTech;
+        }
+       else if(props.category==="general"){
+          parseData=dataVal;
+
+        }
+      }
+      
+      //SWITCH BETWEEN API DATA VS JSON DATA
+      // let data = await fetch(url);
+      // let parseData = await data.json();
+      
+      
+      // let parseData=dataVal;
+      setArticles(articles.concat(parseData.articles));
+      setTotalResults(parseData.totalResults);
+    };
+    
         
         return (
           <>
@@ -131,7 +221,7 @@ export default News;
 News.defaultProps = {
   country: "in",
   pageSize: "9",
-  category: "general",
+  category: "",
 };
 News.propTypes = {
   country: PropTypes.string,
