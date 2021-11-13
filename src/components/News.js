@@ -30,6 +30,7 @@ const News=(props)=> {
   
   //SWITCH BETWEEN API DATA VS JSON DATA
   // const [articles, setArticles] = useState([])
+  location.reload();
   {
     if(props.category==="business"){
       sampleDataVal=dataValBus;
@@ -52,31 +53,32 @@ const News=(props)=> {
     }
     else if(props.category==="general"){
       sampleDataVal=dataVal;
-  
+      
     }
   }
   const [articles, setArticles] = useState(sampleDataVal.articles);
+  
+  
+  const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState(1)
+  const [totalResults, setTotalResults] = useState(0)
+  
+  
+  const capitalizeFirstLetter=(string)=>{
+    return string.charAt(0).toUpperCase()+string.slice(1);
+  }
+  
+  
+  const updateNews=async()=>{
+    props.setProgress(10);
+    // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page}&pageSize=${props.pageSize}`;
+    let parseData;
     
-    
-    const [loading, setLoading] = useState(true)
-    const [page, setPage] = useState(1)
-    const [totalResults, setTotalResults] = useState(0)
-    
-    
-    const capitalizeFirstLetter=(string)=>{
-      return string.charAt(0).toUpperCase()+string.slice(1);
-    }
-    
-
-    const updateNews=async()=>{
-      props.setProgress(10);
-      // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page}&pageSize=${props.pageSize}`;
-      let parseData;
-      
-      setLoading(true);
-      {
-        if(props.category==="business"){
-          parseData=dataValBus;
+    setLoading(true);
+    location.reload();
+    {
+      if(props.category==="business"){
+        parseData=dataValBus;
         }
         
         else if(props.category==="entertainment"){
@@ -128,6 +130,7 @@ const News=(props)=> {
       setPage(page+1);
       // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page+1}&pageSize=${props.pageSize}`;
       let parseData;
+      location.reload();
       {
         if(props.category==="business"){
           parseData=dataValBus;
