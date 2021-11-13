@@ -30,7 +30,9 @@ const News=(props)=> {
   
   //SWITCH BETWEEN API DATA VS JSON DATA
   // const [articles, setArticles] = useState([])
-  location.reload();
+  setTimeout(function(){
+    window.location.reload();
+  });
   {
     if(props.category==="business"){
       sampleDataVal=dataValBus;
@@ -75,7 +77,9 @@ const News=(props)=> {
     let parseData;
     
     setLoading(true);
-    location.reload();
+    setTimeout(function(){
+      window.location.reload();
+    });
     {
       if(props.category==="business"){
         parseData=dataValBus;
@@ -130,7 +134,9 @@ const News=(props)=> {
       setPage(page+1);
       // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page+1}&pageSize=${props.pageSize}`;
       let parseData;
-      location.reload();
+      setTimeout(function(){
+        window.location.reload();
+      });
       {
         if(props.category==="business"){
           parseData=dataValBus;
