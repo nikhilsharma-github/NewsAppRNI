@@ -77,9 +77,6 @@ const News=(props)=> {
     let parseData;
     
     setLoading(true);
-    setTimeout(function(){
-      window.location.reload();
-    });
     {
       if(props.category==="business"){
         parseData=dataValBus;
@@ -134,9 +131,6 @@ const News=(props)=> {
       setPage(page+1);
       // const url = `https://newsapi.org/v2/top-headlines?category=${props.category}&category=${props.category}&country=${props.country}&apiKey=${props.apiKey}&fe7972e1c3e4e1c8813a81c8684a888&page=${page+1}&pageSize=${props.pageSize}`;
       let parseData;
-      setTimeout(function(){
-        window.location.reload();
-      });
       {
         if(props.category==="business"){
           parseData=dataValBus;
